@@ -9,5 +9,5 @@ RUN chmod +x ./jetbrains_debugger_agent
 USER steam
 COPY --from=zip ./2023.3/ /root/.local/share/JetBrains/RiderRemoteDebugger/2023.3/
 
-RUN sed -i '/eval "\.\/cs2"/,/# Post Hook/c\echo "Running Debugger";./jetbrains_debugger_agent -port 23946\n' ./entry.sh
+RUN sed -i '/eval "\.\/cs2"/,/# Post Hook/c\echo "Running Debugger";sleep 500\n' ./entry.sh
 
